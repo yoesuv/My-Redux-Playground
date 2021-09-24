@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Splash from './src/screens/Splash';
 import Home from './src/screens/Home';
+import Counter from './src/screens/Counter';
 import { RootStackParamList } from './src/screens/RootStackParams';
 import { THEME_COLOR } from './src/data/Colors';
 
@@ -16,6 +17,16 @@ export default function App() {
         <Stack.Screen name="Splash" component={Splash} options={{headerShown: false}} />
         <Stack.Screen name="Home" component={Home} options={{
           title: 'Home',
+          headerStyle: {
+            backgroundColor: THEME_COLOR
+          },
+          headerTintColor: 'white',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          }
+        }} />
+        <Stack.Screen name="Counter" component={Counter} options={{
+          title: 'Counter',
           headerStyle: {
             backgroundColor: THEME_COLOR
           },
