@@ -14,7 +14,18 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 const initialState = {
   counter: 0
 }
-const reducer = (state = initialState) => {
+const reducer = (state = initialState, action) => {
+  console.log(action.type);
+  switch (action.type) {
+    case 'INCREASE_COUNTER':
+    return {
+      counter: state.counter + 1
+    }
+    case 'DECREASE_COUNTER':
+    return {
+      counter: state.counter - 1
+    }
+  }
   return state;
 }
 const store = createStore(reducer);
