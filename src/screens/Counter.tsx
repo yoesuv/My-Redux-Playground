@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import Button from '../components/Button';
 import SizedBox from '../components/SizedBox';
+import { increaseCounter, decreaseCounter } from '../store/actions/UiCounter';
 
 class Counter extends React.Component {
   render() {
@@ -13,13 +14,11 @@ class Counter extends React.Component {
           <Text style={styles.textCounter}>{this.props.counter}</Text>
           <View style={styles.buttonView}>
             <Button title='- Decrease' onPress={() => {
-              console.log('Decrease');
-              this.props.increaseCounter;
+              this.props.decreaseCounter();
             }} />
             <SizedBox width={10} />
             <Button title='+ Increase' onPress={() => {
-              console.log('Increase');
-              this.props.decreaseCounter;
+              this.props.increaseCounter();
             }} />
           </View>
         </View>
@@ -49,15 +48,15 @@ const styles = StyleSheet.create({
 
 function mapStateToProps(state) {
   return {
-    counter: state.counter
+    counter: state.counterConfigure.counter
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    increaseCounter: () => dispatch({type: 'INCREASE_COUNTER'}),
-    decreaseCounter: () => dispatch({type: 'DECREASE_COUNTER'})
+    increaseCounter: () => dispatch(increaseCounter()),
+    decreaseCounter: () => dispatch(decreaseCounter())
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps) (Counter);
+export default connect(mapStateToProps, mapDispatchToProps)(Counter);
