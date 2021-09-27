@@ -14,12 +14,12 @@ class Counter extends React.Component {
           <View style={styles.buttonView}>
             <Button title='- Decrease' onPress={() => {
               console.log('Decrease');
-              this.props.increaseCounter
+              this.props.increaseCounter;
             }} />
             <SizedBox width={10} />
             <Button title='+ Increase' onPress={() => {
               console.log('Increase');
-              this.props.decreaseCounter
+              this.props.decreaseCounter;
             }} />
           </View>
         </View>

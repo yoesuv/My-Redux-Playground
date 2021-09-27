@@ -1,7 +1,6 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
 import Splash from './src/screens/Splash';
@@ -9,30 +8,14 @@ import Home from './src/screens/Home';
 import Counter from './src/screens/Counter';
 import { RootStackParamList } from './src/screens/RootStackParams';
 import { THEME_COLOR } from './src/data/Colors';
+import store from './src/store/store'
 
+const configureStore = store();
 const Stack = createNativeStackNavigator<RootStackParamList>();
-const initialState = {
-  counter: 0
-}
-const reducer = (state = initialState, action) => {
-  console.log(action.type);
-  switch (action.type) {
-    case 'INCREASE_COUNTER':
-    return {
-      counter: state.counter + 1
-    }
-    case 'DECREASE_COUNTER':
-    return {
-      counter: state.counter - 1
-    }
-  }
-  return state;
-}
-const store = createStore(reducer);
 
 export default function App() {
   return (
-    <Provider store={store}>
+    <Provider store={configureStore}>
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Splash" component={Splash} options={{headerShown: false}} />
