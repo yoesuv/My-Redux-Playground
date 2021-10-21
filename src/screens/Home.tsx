@@ -18,6 +18,11 @@ export default function Home() {
       <Button title='Counter' onPress={() => {
         navigation.navigate('Counter');
       }} />
+      <View style={styles.button}>
+        <Button title='Request Api' onPress={() => {
+          navigation.navigate('RequestApi');
+        }} />
+      </View>
     </View>
   );
 }
@@ -31,6 +36,9 @@ const styles = StyleSheet.create({
   },
   homeText: {
     fontSize: 20,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+  },
+  button: {
+    marginTop: 10,
   }
 });
