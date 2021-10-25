@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, ActivityIndicator } from 'react-native';
 import { Dispatch } from 'redux';
 import { connect, ConnectedProps } from 'react-redux';
 
@@ -8,22 +8,30 @@ import { getListPlace } from '../store/actions/MyApplicationData';
 interface RootState {
   dataConfigure: {
     places: [],
+  },
+  listPlaceConfigure: {
+    isLoading: true,
   }
 }
 
 const ListPlace = (props: Props) => {
   useEffect(() => {
       props.onGetListPlaces();
-  });
+  },[]);
+
+  const loading = (<ActivityIndicator size='large' />);
+  const content = (<Text>{ props.places.length }</Text>);
+
   return (
     <View>
-      <Text>Screen Request Api</Text>
+      { props.isLoading ? content : content }
     </View>
   );
 }
 
 const mapStateToProps = (state: RootState) => ({
   places: state.dataConfigure.places,
+  isLoading: state.listPlaceConfigure.isLoading,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
