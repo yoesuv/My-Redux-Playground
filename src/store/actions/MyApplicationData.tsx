@@ -1,12 +1,14 @@
 import { SET_LIST_PLACE } from './ActionTypes';
-import { uiStartLoadingListPlace, uiStopLoadingListPlace, uiNetworkErrorListPlace } from './Index';
+import { uiStartLoadingListPlace, uiStopLoadingListPlace, uiNetworkErrorListPlace } from './UiListPlace';
 
 export const getListPlace = () => {
+  console.log("getListPlace");
   return dispatch => {
     dispatch(uiStartLoadingListPlace);
     fetch("https://info-malang-batu.firebaseapp.com/List_place_malang_batu.json")
     .then((response) => response.json())
     .then((responseJson) => {
+      console.log("sukses request data");
       dispatch(uiStopLoadingListPlace);
       dispatch(setListPlace(responseJson));
     })
