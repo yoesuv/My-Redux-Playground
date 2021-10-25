@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import Splash from './src/screens/Splash';
 import Home from './src/screens/Home';
 import Counter from './src/screens/Counter';
-import RequestApi from './src/screens/RequestApi';
+import ListPlace from './src/screens/ListPlace';
 import { RootStackParamList } from './src/screens/RootStackParams';
 import { THEME_COLOR } from './src/data/Colors';
 import store from './src/store/store'
@@ -40,7 +40,7 @@ export default function App() {
               fontWeight: 'bold',
             }
           }} />
-          <Stack.Screen name="RequestApi" component={RequestApi} options={{
+          <Stack.Screen name="ListPlace" component={ListPlace} options={{
             title: 'Request Api',
             headerStyle: {
               backgroundColor: THEME_COLOR

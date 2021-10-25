@@ -20,7 +20,7 @@ export default function Home() {
       }} />
       <View style={styles.button}>
         <Button title='Request Api' onPress={() => {
-          navigation.navigate('RequestApi');
+          navigation.navigate('ListPlace');
         }} />
       </View>
     </View>
