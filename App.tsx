@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import Splash from './src/screens/Splash';
 import Home from './src/screens/Home';
 import Counter from './src/screens/Counter';
+import FormAndArguments from './src/screens/FormAndArguments';
 import ListPlace from './src/screens/ListPlace';
 import { RootStackParamList } from './src/screens/RootStackParams';
 import { THEME_COLOR } from './src/data/Colors';
@@ -40,6 +41,16 @@ export default function App() {
               fontWeight: 'bold',
             }
           }} />
+          <Stack.Screen name="FormArguments" component={FormAndArguments} options={{
+            title: 'Form & Arguments',
+            headerStyle: {
+              backgroundColor: THEME_COLOR
+            },
+            headerTintColor: 'white',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            }
+          }}/>
           <Stack.Screen name="ListPlace" component={ListPlace} options={{
             title: 'Request Api',
             headerStyle: {

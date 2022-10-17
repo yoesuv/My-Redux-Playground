@@ -19,6 +19,10 @@ export default function Home() {
           navigation.navigate('Counter');
         }} />
         <SizedBox height={10} />
+        <Button title='Form & Arguments' onPress={() => {
+          navigation.navigate('FormArguments');
+        }} />
+        <SizedBox height={10} />
         <Button title='Request Api' onPress={() => {
             navigation.navigate('ListPlace');
         }} />
