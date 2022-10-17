@@ -4,11 +4,13 @@ import thunk from 'redux-thunk';
 import dataReducer from '../store/reducers/MyApplicationData';
 import counterReducer from '../store/reducers/Counter';
 import listPlaceReducer from '../store/reducers/ListPlace';
+import formArgumentReducer from '../store/reducers/FormArgument';
 
 const rootReducer = combineReducers({
   dataConfigure: dataReducer,
   counterConfigure: counterReducer,
   listPlaceConfigure: listPlaceReducer,
+  formArgumentConfigure: formArgumentReducer,
 });
 
 let composeEnhanchers = compose;
