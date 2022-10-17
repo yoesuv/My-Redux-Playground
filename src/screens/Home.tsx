@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, SafeAreaView, Text, View, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 
@@ -12,18 +12,18 @@ type homeScreenProp = StackNavigationProp<RootStackParamList, 'Home'>;
 export default function Home() {
   const navigation = useNavigation<homeScreenProp>();
   return (
-    <View style={styles.container}>
-      <Text style={styles.homeText}>Home</Text>
-      <SizedBox height={10} />
-      <Button title='Counter' onPress={() => {
-        navigation.navigate('Counter');
-      }} />
-      <View style={styles.button}>
-        <Button title='Request Api' onPress={() => {
-          navigation.navigate('ListPlace');
+    <SafeAreaView style={styles.container}>
+      <ScrollView style={styles.scrollview}>
+        <SizedBox height={10} />
+        <Button title='Counter' onPress={() => {
+          navigation.navigate('Counter');
         }} />
-      </View>
-    </View>
+        <SizedBox height={10} />
+        <Button title='Request Api' onPress={() => {
+            navigation.navigate('ListPlace');
+        }} />
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
@@ -31,14 +31,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
-  homeText: {
-    fontSize: 20,
-    fontWeight: 'bold',
+  scrollview: {
+    paddingHorizontal: 24,
   },
-  button: {
-    marginTop: 10,
-  }
 });

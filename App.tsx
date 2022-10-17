@@ -21,7 +21,7 @@ export default function App() {
         <Stack.Navigator>
           <Stack.Screen name="Splash" component={Splash} options={{headerShown: false}} />
           <Stack.Screen name="Home" component={Home} options={{
-            title: 'Home',
+            title: 'My Redux Playground',
             headerStyle: {
               backgroundColor: THEME_COLOR
             },
