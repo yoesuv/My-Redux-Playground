@@ -11,3 +11,5 @@ export const decreaseCounter = () => {
     type: DECREASE_COUNTER
   };
 }
+
+export default { increaseCounter, decreaseCounter }
