@@ -4,9 +4,9 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Provider } from 'react-redux';
 
 import Splash from './src/screens/Splash';
-import Home from './src/screens/Home';
+import Home from './src/screens/home';
 import Counter from './src/screens/counter';
-import FormAndArguments from './src/screens/FormAndArguments';
+import FormAndArguments from './src/screens/form-and-arguments';
 import ListPlace from './src/screens/ListPlace';
 import { RootStackParamList } from './src/screens/RootStackParams';
 import { THEME_COLOR } from './src/data/Colors';
