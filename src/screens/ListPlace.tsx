@@ -3,7 +3,7 @@ import { Text, View, ActivityIndicator } from 'react-native';
 import { Dispatch } from 'redux';
 import { connect, ConnectedProps } from 'react-redux';
 
-import { getListPlace } from '../store/actions/MyApplicationData';
+import { getListPlace } from '../redux/actions/MyApplicationData';
 
 interface RootState {
   dataConfigure: {

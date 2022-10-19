@@ -1,7 +1,7 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
-import counterReducer from '../store/reducers/Counter';
+import counterReducer from './reducers/Counter';
 
 const rootReducer = combineReducers({
   counterConfigure: counterReducer,

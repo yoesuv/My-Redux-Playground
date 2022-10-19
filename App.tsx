@@ -10,7 +10,7 @@ import FormAndArguments from './src/screens/FormAndArguments';
 import ListPlace from './src/screens/ListPlace';
 import { RootStackParamList } from './src/screens/RootStackParams';
 import { THEME_COLOR } from './src/data/Colors';
-import store from './src/store/store'
+import store from './src/redux/store'
 
 const configureStore = store();
 const Stack = createNativeStackNavigator<RootStackParamList>();
