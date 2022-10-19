@@ -16,12 +16,10 @@ const Counter = () => {
         <Text style={styles.textCounter}>{stateCounter.counter}</Text>
         <View style={styles.buttonView}>
           <Button title='- Decrease' onPress={() => {
-            //props.setDecrease();
             dispatch(decreaseCounter());
           }} />
           <SizedBox width={10} />
           <Button title='+ Increase' onPress={() => {
-            //props.setIncrease();
             dispatch(increaseCounter());
           }} />
         </View>
