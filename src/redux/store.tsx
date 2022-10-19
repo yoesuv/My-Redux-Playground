@@ -1,11 +1,6 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-
-import counterReducer from './reducers/Counter';
-
-const rootReducer = combineReducers({
-  counterConfigure: counterReducer,
-});
+import { rootReducer } from './reducers';
 
 const middleware = applyMiddleware(thunk);
 const configureStore = () => {

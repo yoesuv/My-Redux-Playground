@@ -1,30 +1,28 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Dispatch } from 'redux';
-import { connect, ConnectedProps } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Button from '../components/Button';
 import SizedBox from '../components/SizedBox';
 import { increaseCounter, decreaseCounter } from '../redux/actions/counter-action';
+import { RootState } from '../redux/reducers';
 
-interface RootState {
-  counterConfigure: {
-    counter: 0
-  }
-}
-
-const Counter = (props: Props) => {
+const Counter = () => {
+  const dispatch = useDispatch();
+  const stateCounter = useSelector((state: RootState) => state.counter);
   return (
     <View style={styles.container}>
       <View style={styles.box}>
-        <Text style={styles.textCounter}>{props.counter}</Text>
+        <Text style={styles.textCounter}>{stateCounter.counter}</Text>
         <View style={styles.buttonView}>
           <Button title='- Decrease' onPress={() => {
-            props.setDecrease();
+            //props.setDecrease();
+            dispatch(decreaseCounter());
           }} />
           <SizedBox width={10} />
           <Button title='+ Increase' onPress={() => {
-            props.setIncrease();
+            //props.setIncrease();
+            dispatch(increaseCounter());
           }} />
         </View>
       </View>
@@ -51,17 +49,4 @@ const styles = StyleSheet.create({
   }
 })
 
-const mapStateToProps = (state: RootState) => ({
-  counter: state.counterConfigure.counter
-});
-
-const mapDispatchToProps = (dispatch: Dispatch) => ({
-  setIncrease: () => dispatch(increaseCounter()),
-  setDecrease: () => dispatch(decreaseCounter())
-})
-
-const connector = connect(mapStateToProps, mapDispatchToProps);
-type PropsFromRedux = ConnectedProps<typeof connector>;
-type Props = PropsFromRedux;
-
-export default connector(Counter);
+export default Counter;
