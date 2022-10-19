@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Controller, useForm } from 'react-hook-form';
 import { StyleSheet, SafeAreaView, Text, View, TextInput } from 'react-native';
 import Button from '../components/Button';
 import SizedBox from '../components/SizedBox';
 
 export default function FormAndArguments() {
+
+    interface ILoginInput {
+        email: String;
+        password: String;
+      }
+
+    function onSubmit() {
+        console.debug("Login Press");
+    }
+
     return(
         <SafeAreaView style={styles.container}>
             <Text style={styles.label}>Email</Text>
@@ -15,7 +26,7 @@ export default function FormAndArguments() {
             <TextInput style={styles.input}/>
             <View style={styles.bottomButton} >
                 <Button  title='Login' onPress={() => {
-
+                    onSubmit();
                 }} />
             </View>
         </SafeAreaView>

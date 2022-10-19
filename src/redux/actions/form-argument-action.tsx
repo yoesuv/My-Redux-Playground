@@ -5,3 +5,5 @@ export const submitLoginStart = () => {
         type : SUBMIT_LOGIN_START
     };
 }
+
+export default { submitLoginStart }
