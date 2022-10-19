@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
+import { useDispatch, useSelector } from 'react-redux';
 import { StyleSheet, SafeAreaView, Text, View, TextInput } from 'react-native';
 import Button from '../components/Button';
 import SizedBox from '../components/SizedBox';
+import { submitLoginStart } from '../redux/actions'
+import { RootState } from '../redux/reducers';
 
 export default function FormAndArguments() {
 
@@ -16,8 +19,12 @@ export default function FormAndArguments() {
     });
 
     const onSubmit = handleSubmit(({email, password}) => {
-        console.debug(`Email: ${email}\nPassword: ${password}`);
+        console.debug(`Form Argument Screen Email: ${email}\Password: ${password}`);
+        dispatch(submitLoginStart(email, password));
     });
+
+    const dispatch = useDispatch();
+    const stateForm = useSelector((state: RootState) => state.form);
 
     return(
         <SafeAreaView style={styles.container}>
@@ -26,6 +33,7 @@ export default function FormAndArguments() {
             <Controller
                 control={control}
                 name="email"
+                defaultValue={stateForm.email}
                 render={({ field: { onChange, onBlur, value } }) => (
                     <TextInput
                         style={styles.input}
@@ -44,6 +52,7 @@ export default function FormAndArguments() {
             <Controller
                 control={control}
                 name="password"
+                defaultValue={stateForm.password}
                 render={({ field: { onChange, onBlur, value } }) => (
                     <TextInput
                         style={styles.input}
