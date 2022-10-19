@@ -33,7 +33,6 @@ export default function FormAndArguments() {
             <Controller
                 control={control}
                 name="email"
-                defaultValue={stateForm.email}
                 render={({ field: { onChange, onBlur, value } }) => (
                     <TextInput
                         style={styles.input}
@@ -52,7 +51,6 @@ export default function FormAndArguments() {
             <Controller
                 control={control}
                 name="password"
-                defaultValue={stateForm.password}
                 render={({ field: { onChange, onBlur, value } }) => (
                     <TextInput
                         style={styles.input}
@@ -65,7 +63,9 @@ export default function FormAndArguments() {
                     />
                 )}
             />
-            <View style={styles.bottomButton} >
+            <View style={styles.viewBottom} >
+                <Button title="Reset" onPress={onSubmit} />
+                <SizedBox width={10} />
                 <Button title="Login" onPress={onSubmit} />
             </View>
         </SafeAreaView>
@@ -92,10 +92,11 @@ const styles = StyleSheet.create({
         paddingVertical: 10,
         paddingHorizontal: 10
     },
-    bottomButton: {
+    viewBottom: {
+        flexDirection: 'row',
         position: 'absolute',
         bottom: 24,
         left: 24,
         right: 24,
-    }
+    },
 });

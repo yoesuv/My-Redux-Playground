@@ -39,7 +39,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   buttonView: {
-    flexDirection: 'row'
+    flexDirection: 'row',
+    marginHorizontal: 24,
   },
   textCounter: {
     fontSize: 200,
