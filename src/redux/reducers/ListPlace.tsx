@@ -1,4 +1,4 @@
-import { UI_START_LOADING_LIST_PLACE, UI_STOP_LOADING_LIST_PLACE, UI_NETWORK_ERROR_LIST_PLACE } from '../actions/ActionTypes';
+import { UI_START_LOADING_LIST_PLACE, UI_STOP_LOADING_LIST_PLACE, UI_NETWORK_ERROR_LIST_PLACE } from '../actions/action-types';
 
 interface ListPlace {
   type: String,

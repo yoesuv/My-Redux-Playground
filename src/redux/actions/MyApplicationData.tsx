@@ -1,4 +1,4 @@
-import { SET_LIST_PLACE } from './ActionTypes';
+import { SET_LIST_PLACE } from './action-types';
 import { uiStartLoadingListPlace, uiStopLoadingListPlace, uiNetworkErrorListPlace } from './UiListPlace';
 
 export const getListPlace = () => {

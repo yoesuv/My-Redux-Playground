@@ -1,4 +1,4 @@
-import { SET_LIST_PLACE } from '../actions/ActionTypes';
+import { SET_LIST_PLACE } from '../actions/action-types';
 
 interface MyApplicationData {
   type: String,

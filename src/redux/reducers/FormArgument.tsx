@@ -1,4 +1,4 @@
-import { SUBMIT_LOGIN_START } from '../actions/ActionTypes';
+import { SUBMIT_LOGIN_START } from '../actions/action-types';
 
 interface FormArgument {
     type: String,

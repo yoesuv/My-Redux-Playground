@@ -5,7 +5,7 @@ import { connect, ConnectedProps } from 'react-redux';
 
 import Button from '../components/Button';
 import SizedBox from '../components/SizedBox';
-import { increaseCounter, decreaseCounter } from '../redux/actions/UiCounter';
+import { increaseCounter, decreaseCounter } from '../redux/actions/counter-action';
 
 interface RootState {
   counterConfigure: {

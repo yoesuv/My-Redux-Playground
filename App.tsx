@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 
 import Splash from './src/screens/Splash';
 import Home from './src/screens/Home';
-import Counter from './src/screens/Counter';
+import Counter from './src/screens/counter';
 import FormAndArguments from './src/screens/FormAndArguments';
 import ListPlace from './src/screens/ListPlace';
 import { RootStackParamList } from './src/screens/RootStackParams';

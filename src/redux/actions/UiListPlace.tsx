@@ -1,4 +1,4 @@
-import { UI_START_LOADING_LIST_PLACE, UI_STOP_LOADING_LIST_PLACE, UI_NETWORK_ERROR_LIST_PLACE } from './ActionTypes'
+import { UI_START_LOADING_LIST_PLACE, UI_STOP_LOADING_LIST_PLACE, UI_NETWORK_ERROR_LIST_PLACE } from './action-types'
 
 export const uiStartLoadingListPlace = () => {
   return {

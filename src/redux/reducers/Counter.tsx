@@ -1,4 +1,4 @@
-import { INCREASE_COUNTER, DECREASE_COUNTER } from '../actions/ActionTypes';
+import { INCREASE_COUNTER, DECREASE_COUNTER } from '../actions/action-types';
 
 interface Counter {
   type: String
