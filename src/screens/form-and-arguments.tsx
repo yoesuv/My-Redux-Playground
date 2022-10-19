@@ -25,7 +25,7 @@ export default function FormAndArguments() {
             <SizedBox height={10} />
             <Controller
                 control={control}
-                name='email'
+                name="email"
                 render={({ field: { onChange, onBlur, value } }) => (
                     <TextInput
                         style={styles.input}
@@ -34,16 +34,30 @@ export default function FormAndArguments() {
                         keyboardType="email-address"
                         onBlur={onBlur}
                         onChangeText={onChange}
-                        value={value.toString()}
+                        value={value ? value.toString() : ''}
                     />
                 )}
             />
             <SizedBox height={15} />
             <Text style={styles.label}>Password</Text>
             <SizedBox height={10} />
-            <TextInput style={styles.input}/>
+            <Controller
+                control={control}
+                name="password"
+                render={({ field: { onChange, onBlur, value } }) => (
+                    <TextInput
+                        style={styles.input}
+                        autoCapitalize="none"
+                        autoCorrect={false}
+                        keyboardType="default"
+                        onBlur={onBlur}
+                        onChangeText={onChange}
+                        value={value ? value.toString() : ''}
+                    />
+                )}
+            />
             <View style={styles.bottomButton} >
-                <Button  title='Login' onPress={onSubmit} />
+                <Button title="Login" onPress={onSubmit} />
             </View>
         </SafeAreaView>
     );
