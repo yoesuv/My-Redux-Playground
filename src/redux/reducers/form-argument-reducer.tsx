@@ -10,7 +10,7 @@ const initialState = {
     password: "",
 }
 
-const reducer = (state = initialState, action: FormArgument) => {
+export function formReducer(state = initialState, action: FormArgument) {
     switch (action.type) {
         case SUBMIT_LOGIN_START:
             return {
@@ -21,5 +21,3 @@ const reducer = (state = initialState, action: FormArgument) => {
             return state;
     }
 }
-
-export default reducer;
