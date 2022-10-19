@@ -9,25 +9,41 @@ export default function FormAndArguments() {
     interface ILoginInput {
         email: String;
         password: String;
-      }
-
-    function onSubmit() {
-        console.debug("Login Press");
     }
+
+    const { control, handleSubmit, formState } = useForm<ILoginInput>({
+        mode: 'onChange',
+    });
+
+    const onSubmit = handleSubmit(({email, password}) => {
+        console.debug(`Email: ${email}\nPassword: ${password}`);
+    });
 
     return(
         <SafeAreaView style={styles.container}>
             <Text style={styles.label}>Email</Text>
             <SizedBox height={10} />
-            <TextInput style={styles.input}/>
+            <Controller
+                control={control}
+                name='email'
+                render={({ field: { onChange, onBlur, value } }) => (
+                    <TextInput
+                        style={styles.input}
+                        autoCapitalize="none"
+                        autoCorrect={false}
+                        keyboardType="email-address"
+                        onBlur={onBlur}
+                        onChangeText={onChange}
+                        value={value.toString()}
+                    />
+                )}
+            />
             <SizedBox height={15} />
             <Text style={styles.label}>Password</Text>
             <SizedBox height={10} />
             <TextInput style={styles.input}/>
             <View style={styles.bottomButton} >
-                <Button  title='Login' onPress={() => {
-                    onSubmit();
-                }} />
+                <Button  title='Login' onPress={onSubmit} />
             </View>
         </SafeAreaView>
     );
