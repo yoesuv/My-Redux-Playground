@@ -21,14 +21,11 @@ export default function FormAndArguments() {
     });
 
     const onSubmit = handleSubmit(({email, password}) => {
-        console.debug(`Form Argument Screen Email: ${email}\Password: ${password}`);
         dispatch(submitLoginStart(email, password));
     });
 
     const onReset = () => {
-        console.debug(`Form Argument Screen # reset form`);
         setIsModalVisible(true);
-        //reset();
     };
 
     const dispatch = useDispatch();
@@ -37,7 +34,12 @@ export default function FormAndArguments() {
     const [isModalVisible, setIsModalVisible] = useState(false);
     const closeModal = () => {
         setIsModalVisible(false);
-    }
+    };
+
+    const resetForm = () => {
+        setIsModalVisible(false);
+        reset();
+    };
 
     return(
         <SafeAreaView style={styles.container}>
@@ -91,7 +93,7 @@ export default function FormAndArguments() {
                     <View style={{ flexDirection: "row"}}>
                         <Button title="Cancel" onPress={closeModal} />
                         <SizedBox width={10} />
-                        <Button title="Yes" onPress={closeModal} />
+                        <Button title="Yes" onPress={resetForm} />
                     </View>
                     
                 </View>
