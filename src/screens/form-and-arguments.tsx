@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { StyleSheet, SafeAreaView, Text, View, TextInput } from 'react-native';
+import Modal from "react-native-modal";
+
 import Button from '../components/button';
 import SizedBox from '../components/sized-box';
 import { submitLoginStart } from '../redux/actions'
@@ -14,7 +16,7 @@ export default function FormAndArguments() {
         password: String;
     }
 
-    const { control, handleSubmit, formState } = useForm<ILoginInput>({
+    const { control, handleSubmit, reset, formState } = useForm<ILoginInput>({
         mode: 'onChange',
     });
 
@@ -23,8 +25,19 @@ export default function FormAndArguments() {
         dispatch(submitLoginStart(email, password));
     });
 
+    const onReset = () => {
+        console.debug(`Form Argument Screen # reset form`);
+        setIsModalVisible(true);
+        //reset();
+    };
+
     const dispatch = useDispatch();
     const stateForm = useSelector((state: RootState) => state.form);
+
+    const [isModalVisible, setIsModalVisible] = useState(false);
+    const closeModal = () => {
+        setIsModalVisible(false);
+    }
 
     return(
         <SafeAreaView style={styles.container}>
@@ -64,10 +77,25 @@ export default function FormAndArguments() {
                 )}
             />
             <View style={styles.viewBottom} >
-                <Button title="Reset" onPress={onSubmit} />
+                <Button title="Reset" onPress={onReset} />
                 <SizedBox width={10} />
                 <Button title="Login" onPress={onSubmit} />
             </View>
+
+            <Modal isVisible={isModalVisible}
+                animationIn = 'fadeIn'
+                animationOut= 'fadeOut'>
+                <View style={styles.containerModal}>
+                    <Text style={styles.label}>Reset Form Login?</Text>
+                    <SizedBox height={24} />
+                    <View style={{ flexDirection: "row"}}>
+                        <Button title="Cancel" onPress={closeModal} />
+                        <SizedBox width={10} />
+                        <Button title="Yes" onPress={closeModal} />
+                    </View>
+                    
+                </View>
+            </Modal>
         </SafeAreaView>
     );
 }
@@ -99,4 +127,11 @@ const styles = StyleSheet.create({
         left: 24,
         right: 24,
     },
+    containerModal: {
+        alignItems: 'center',
+        backgroundColor: '#fff',
+        paddingHorizontal: 24,
+        paddingVertical: 24,
+        borderRadius: 8,
+    }
 });
