@@ -9,7 +9,7 @@ import Counter from './src/screens/counter';
 import FormAndArguments from './src/screens/form-and-arguments';
 import ListPlace from './src/screens/ListPlace';
 import { RootStackParamList } from './src/screens/RootStackParams';
-import { THEME_COLOR } from './src/data/Colors';
+import { THEME_COLOR } from './src/data/colors';
 import store from './src/redux/store'
 
 const configureStore = store();

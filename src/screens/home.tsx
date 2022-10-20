@@ -3,7 +3,7 @@ import { StyleSheet, SafeAreaView, Text, View, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 
-import Button from '../components/Button';
+import Button from '../components/button';
 import SizedBox from '../components/SizedBox';
 import { RootStackParamList } from '../screens/RootStackParams';
 

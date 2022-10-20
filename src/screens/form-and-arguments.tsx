@@ -2,7 +2,7 @@ import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { StyleSheet, SafeAreaView, Text, View, TextInput } from 'react-native';
-import Button from '../components/Button';
+import Button from '../components/button';
 import SizedBox from '../components/SizedBox';
 import { submitLoginStart } from '../redux/actions'
 import { RootState } from '../redux/reducers';

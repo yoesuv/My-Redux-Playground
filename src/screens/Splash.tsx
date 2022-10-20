@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 
-import { THEME_COLOR } from '../data/Colors';
+import { THEME_COLOR } from '../data/colors';
 import { RootStackParamList } from '../screens/RootStackParams';
 
 type splashScreenProp = StackNavigationProp<RootStackParamList, 'Splash'>;

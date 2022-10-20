@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Text, StyleSheet, Pressable, GestureResponderEvent } from 'react-native';
-import { THEME_COLOR } from '../data/Colors';
+import { THEME_COLOR, THEME_COLOR_700 } from '../data/colors';
 
 interface ButtonProps {
   onPress: (event: GestureResponderEvent) => void;
@@ -8,8 +8,11 @@ interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> = ({onPress, title = 'Save'}) => {
-  return <Pressable style={styles.button} onPress={onPress}>
-    <Text style={styles.text}>{title}</Text>
+
+  return <Pressable style={({ pressed }) => [
+    pressed ? styles.buttonPress :styles.button
+    ]} onPress={onPress}>
+      <Text style={styles.text}>{title}</Text>
   </Pressable>
 }
 
@@ -21,6 +24,15 @@ const styles = StyleSheet.create({
     paddingHorizontal: 32,
     borderRadius: 8,
     backgroundColor: THEME_COLOR,
+    flex: 1,
+  },
+  buttonPress: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+    borderRadius: 8,
+    backgroundColor: THEME_COLOR_700,
     flex: 1,
   },
   text: {
