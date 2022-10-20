@@ -3,6 +3,8 @@ import { Controller, useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { StyleSheet, SafeAreaView, Text, View, TextInput } from 'react-native';
 import Modal from "react-native-modal";
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as Yup from 'yup';
 
 import Button from '../components/button';
 import SizedBox from '../components/sized-box';
@@ -16,9 +18,17 @@ export default function FormAndArguments() {
         password: String;
     }
 
+    const schema = Yup.object().shape({
+        email: Yup.string().email('enter a valid email').required('enter an email'),
+        password: Yup.string().required('enter a password').min(5, 'password min 5 character')
+    });
+
     const { control, handleSubmit, reset, formState } = useForm<ILoginInput>({
         mode: 'onChange',
+        resolver: yupResolver(schema),
     });
+    const { isDirty, isValid } = formState;
+    
 
     const onSubmit = handleSubmit(({email, password}) => {
         dispatch(submitLoginStart(email, password));
@@ -81,7 +91,7 @@ export default function FormAndArguments() {
             <View style={styles.viewBottom} >
                 <Button title="Reset" onPress={onReset} />
                 <SizedBox width={10} />
-                <Button title="Login" onPress={onSubmit} />
+                <Button title="Login" disabled={!isValid || !isDirty} onPress={onSubmit} />
             </View>
 
             <Modal isVisible={isModalVisible}

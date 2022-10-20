@@ -8,6 +8,7 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@hookform/resolvers": "^2.9.9",
     "@react-navigation/native": "^6.0.2",
     "@react-navigation/native-stack": "^6.1.0",
     "@react-navigation/stack": "^6.0.7",
@@ -24,7 +25,8 @@
     "react-native-web": "~0.18.7",
     "react-redux": "^7.2.6",
     "redux": "^4.1.2",
-    "redux-thunk": "^2.4.1"
+    "redux-thunk": "^2.4.1",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@babel/core": "^7.18.6",
