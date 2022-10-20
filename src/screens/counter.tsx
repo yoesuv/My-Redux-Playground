@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 
 import Button from '../components/button';
-import SizedBox from '../components/SizedBox';
+import SizedBox from '../components/sized-box';
 import { increaseCounter, decreaseCounter } from '../redux/actions/counter-action';
 import { RootState } from '../redux/reducers';
 

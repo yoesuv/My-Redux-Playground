@@ -4,7 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 
 import Button from '../components/button';
-import SizedBox from '../components/SizedBox';
+import SizedBox from '../components/sized-box';
 import { RootStackParamList } from '../screens/RootStackParams';
 
 type homeScreenProp = StackNavigationProp<RootStackParamList, 'Home'>;
