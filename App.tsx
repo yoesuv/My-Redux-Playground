@@ -7,6 +7,7 @@ import Splash from './src/screens/Splash';
 import Home from './src/screens/home';
 import Counter from './src/screens/counter';
 import FormAndArguments from './src/screens/form-and-arguments';
+import FormResult from './src/screens/form-result';
 import ListPlace from './src/screens/ListPlace';
 import { RootStackParamList } from './src/screens/RootStackParams';
 import { THEME_COLOR } from './src/data/colors';
@@ -35,6 +36,7 @@ export default function App() {
           <Stack.Screen name="Home" component={Home} options={{...baseOptions, title: "My Redux Playground"}} />
           <Stack.Screen name="Counter" component={Counter} options={{...baseOptions, title: "Counter"}} />
           <Stack.Screen name="FormArguments" component={FormAndArguments} options={{...baseOptions, title: "Form & Arguments"}}/>
+          <Stack.Screen name="FormResult" component={FormResult} options={{...baseOptions}} />
           <Stack.Screen name="ListPlace" component={ListPlace} options={{...baseOptions, title: "Networking"}} />
         </Stack.Navigator>
       </NavigationContainer>

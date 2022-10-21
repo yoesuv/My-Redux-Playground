@@ -3,5 +3,6 @@ export type RootStackParamList = {
   Home: undefined;
   Counter: undefined;
   FormArguments: undefined;
+  FormResult: undefined;
   ListPlace: undefined;
 }
