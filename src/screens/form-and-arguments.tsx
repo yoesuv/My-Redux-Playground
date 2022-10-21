@@ -5,13 +5,20 @@ import { StyleSheet, SafeAreaView, Text, View, TextInput } from 'react-native';
 import Modal from "react-native-modal";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from './root-stack-params';
 
 import Button from '../components/button';
 import SizedBox from '../components/sized-box';
 import { submitLoginStart } from '../redux/actions'
 import { RootState } from '../redux/reducers';
 
+type formScreenProp = StackNavigationProp<RootStackParamList, 'FormArguments'>;
+
 export default function FormAndArguments() {
+
+    const navigation = useNavigation<formScreenProp>();
 
     interface ILoginInput {
         email: String;
@@ -32,6 +39,7 @@ export default function FormAndArguments() {
 
     const onSubmit = handleSubmit(({email, password}) => {
         dispatch(submitLoginStart(email, password));
+        navigation.navigate('FormResult');
     });
 
     const onReset = () => {
