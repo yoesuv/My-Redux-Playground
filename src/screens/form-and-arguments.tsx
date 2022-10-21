@@ -13,6 +13,7 @@ import Button from '../components/button';
 import SizedBox from '../components/sized-box';
 import { submitLoginStart } from '../redux/actions'
 import { RootState } from '../redux/reducers';
+import ProgressDialog from '../components/progress-dialog';
 
 type formScreenProp = StackNavigationProp<RootStackParamList, 'FormArguments'>;
 
@@ -116,6 +117,9 @@ export default function FormAndArguments() {
                     
                 </View>
             </Modal>
+
+            <ProgressDialog show={true} />
+
         </SafeAreaView>
     );
 }
