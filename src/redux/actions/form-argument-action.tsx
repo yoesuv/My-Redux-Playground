@@ -1,4 +1,4 @@
-import { SUBMIT_LOGIN_START } from './action-types';
+import { SUBMIT_LOGIN_START, SUBMIT_LOGIN_SUCCESS } from './action-types';
 
 export const submitLoginStart = (email: String, password: String) => {
     return {
@@ -8,4 +8,16 @@ export const submitLoginStart = (email: String, password: String) => {
     };
 }
 
-export default { submitLoginStart }
+export const submitLoginSuccess = () => {
+    return {
+        type : SUBMIT_LOGIN_SUCCESS,
+    }
+}
+
+export function postLogin() {
+    setTimeout(() => {
+        
+    }, 3000);
+}
+
+export default { submitLoginStart, submitLoginSuccess }
