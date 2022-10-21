@@ -1,23 +1,23 @@
-import { SUBMIT_LOGIN_START, SUBMIT_LOGIN_SUCCESS } from './action-types';
+import { ActionCreator} from 'redux';
+import { LoginActionType, SUBMIT_LOGIN_START, SUBMIT_LOGIN_SUCCESS } from './action-types';
 
-export const submitLoginStart = (email: String, password: String) => {
+const submitLoginStart: ActionCreator<LoginActionType> = () => {
     return {
         type : SUBMIT_LOGIN_START,
-        email,
-        password,
     };
 }
 
-export const submitLoginSuccess = () => {
+const submitLoginSuccess: ActionCreator<LoginActionType> = () => {
     return {
         type : SUBMIT_LOGIN_SUCCESS,
     }
 }
 
-export function postLogin() {
-    setTimeout(() => {
-        
-    }, 3000);
+export function loginApi(email: String, password: String) {
+    return (dispatch: (arg0: LoginActionType) => void) => {
+        dispatch(submitLoginStart());
+        setTimeout(() => {
+            dispatch(submitLoginSuccess());
+        }, 3000);
+    }
 }
-
-export default { submitLoginStart, submitLoginSuccess }

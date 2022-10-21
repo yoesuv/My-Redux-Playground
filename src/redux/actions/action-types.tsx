@@ -9,3 +9,13 @@ export const SET_LIST_PLACE = "SET_LIST_PLACE";
 
 export const SUBMIT_LOGIN_START = "SUBMIT_LOGIN_START";
 export const SUBMIT_LOGIN_SUCCESS = "SUBMIT_LOGIN_SUCCESS";
+
+interface SubmitLoginStart {
+    type: typeof SUBMIT_LOGIN_START;
+}
+
+interface SubmitLoginSuccess {
+    type: typeof SUBMIT_LOGIN_SUCCESS;
+}
+
+export type LoginActionType = SubmitLoginStart | SubmitLoginSuccess

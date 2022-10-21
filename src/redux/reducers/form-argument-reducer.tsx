@@ -2,31 +2,28 @@ import { SUBMIT_LOGIN_START, SUBMIT_LOGIN_SUCCESS } from '../actions/action-type
 
 interface FormArgument {
     type: String,
-    email: String,
-    password: String,
 }
 
 const initialState = {
     isLoading: false,
-    email: "",
-    password: "",
+    isSuccess: false,
 }
 
 export function formReducer(state = initialState, action: FormArgument) {
     switch (action.type) {
         case SUBMIT_LOGIN_START:
-            console.log(`Form Argument Reducer # submit login start ${action.email}/${action.password}`);
+            console.log(`Form Argument Reducer # submit login start`);
             return {
                 ...state,
-                email: action.email,
-                pasword: action.password,
                 isLoading: true,
+                isSuccess: false,
             }
         case SUBMIT_LOGIN_SUCCESS: {
             console.log(`Form Argument Reducer # submit login success`);
             return {
                 ...state,
                 isLoading: false,
+                isSuccess: true,
             }
         }
         default:
