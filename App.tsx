@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator, NativeStackNavigationOptions } from '@react-navigation/native-stack';
 import { Provider } from 'react-redux';
 
-import Splash from './src/screens/Splash';
+import Splash from './src/screens/splash';
 import Home from './src/screens/home';
 import Counter from './src/screens/counter';
 import FormAndArguments from './src/screens/form-and-arguments';
