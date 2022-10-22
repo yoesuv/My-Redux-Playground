@@ -11,7 +11,7 @@ import { RootStackParamList } from './root-stack-params';
 
 import Button from '../components/button';
 import SizedBox from '../components/sized-box';
-import { submitLoginStart } from '../redux/actions'
+import { loginApi } from '../redux/actions'
 import { RootState } from '../redux/reducers';
 import ProgressDialog from '../components/progress-dialog';
 
@@ -37,10 +37,8 @@ export default function FormAndArguments() {
     });
     const { isDirty, isValid } = formState;
     
-
     const onSubmit = handleSubmit(({email, password}) => {
-        dispatch(submitLoginStart(email, password));
-        navigation.navigate('FormResult');
+        dispatch(loginApi(email, password));
     });
 
     const onReset = () => {
@@ -114,11 +112,10 @@ export default function FormAndArguments() {
                         <SizedBox width={10} />
                         <Button title="Yes" onPress={resetForm} />
                     </View>
-                    
                 </View>
             </Modal>
 
-            <ProgressDialog show={true} />
+            <ProgressDialog show={stateForm.isLoading} />
 
         </SafeAreaView>
     );
