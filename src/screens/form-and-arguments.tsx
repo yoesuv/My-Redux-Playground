@@ -31,7 +31,7 @@ export default function FormAndArguments() {
         password: Yup.string().required('enter a password').min(5, 'password min 5 character')
     });
 
-    const { control, handleSubmit, reset, formState } = useForm<ILoginInput>({
+    const { control, handleSubmit, reset, formState, getValues } = useForm<ILoginInput>({
         mode: 'onChange',
         resolver: yupResolver(schema),
     });
@@ -60,10 +60,12 @@ export default function FormAndArguments() {
 
     useEffect(() => {
         if (stateForm.isSuccess) {
-            navigation.navigate('FormResult');
+            navigation.navigate('FormResult', {
+                email: getValues('email'),
+            });
             dispatch(submitLoginReset());
         }
-    });
+    }, [stateForm.isSuccess]);
 
     return(
         <SafeAreaView style={styles.container}>
