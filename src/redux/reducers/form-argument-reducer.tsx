@@ -1,4 +1,4 @@
-import { SUBMIT_LOGIN_START, SUBMIT_LOGIN_SUCCESS } from '../actions/action-types';
+import { SUBMIT_LOGIN_RESET, SUBMIT_LOGIN_START, SUBMIT_LOGIN_SUCCESS } from '../actions/action-types';
 
 interface FormArgument {
     type: String,
@@ -11,6 +11,13 @@ const initialState = {
 
 export function formReducer(state = initialState, action: FormArgument) {
     switch (action.type) {
+        case SUBMIT_LOGIN_RESET :
+            console.log(`Form Argument Reducer # submit login reset`);
+            return {
+                ...state,
+                isLoading: false,
+                isSuccess: false,
+            }
         case SUBMIT_LOGIN_START:
             console.log(`Form Argument Reducer # submit login start`);
             return {

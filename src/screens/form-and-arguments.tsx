@@ -11,7 +11,7 @@ import { RootStackParamList } from './root-stack-params';
 
 import Button from '../components/button';
 import SizedBox from '../components/sized-box';
-import { loginApi } from '../redux/actions'
+import { loginApi, submitLoginReset } from '../redux/actions'
 import { RootState } from '../redux/reducers';
 import ProgressDialog from '../components/progress-dialog';
 
@@ -36,6 +36,10 @@ export default function FormAndArguments() {
         resolver: yupResolver(schema),
     });
     const { isDirty, isValid } = formState;
+    const dispatch = useDispatch();
+    const stateForm = useSelector((state: RootState) => state.form);
+
+    const [isModalVisible, setIsModalVisible] = useState(false);
     
     const onSubmit = handleSubmit(({email, password}) => {
         dispatch(loginApi(email, password));
@@ -45,10 +49,6 @@ export default function FormAndArguments() {
         setIsModalVisible(true);
     };
 
-    const dispatch = useDispatch();
-    const stateForm = useSelector((state: RootState) => state.form);
-
-    const [isModalVisible, setIsModalVisible] = useState(false);
     const closeModal = () => {
         setIsModalVisible(false);
     };
@@ -59,9 +59,9 @@ export default function FormAndArguments() {
     };
 
     useEffect(() => {
-        console.log(`Form & Argument Screen ${stateForm.isSuccess}`);
         if (stateForm.isSuccess) {
             navigation.navigate('FormResult');
+            dispatch(submitLoginReset());
         }
     });
 

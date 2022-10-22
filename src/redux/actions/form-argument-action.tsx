@@ -1,5 +1,5 @@
 import { ActionCreator} from 'redux';
-import { LoginActionType, SUBMIT_LOGIN_START, SUBMIT_LOGIN_SUCCESS } from './action-types';
+import { LoginActionType, SUBMIT_LOGIN_START, SUBMIT_LOGIN_SUCCESS, SUBMIT_LOGIN_RESET } from './action-types';
 
 const submitLoginStart: ActionCreator<LoginActionType> = () => {
     return {
@@ -10,6 +10,12 @@ const submitLoginStart: ActionCreator<LoginActionType> = () => {
 const submitLoginSuccess: ActionCreator<LoginActionType> = () => {
     return {
         type : SUBMIT_LOGIN_SUCCESS,
+    }
+}
+
+export const submitLoginReset: ActionCreator<LoginActionType> = () => {
+    return {
+        type : SUBMIT_LOGIN_RESET,
     }
 }
 
