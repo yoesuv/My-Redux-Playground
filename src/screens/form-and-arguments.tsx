@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { StyleSheet, SafeAreaView, Text, View, TextInput } from 'react-native';
@@ -57,6 +57,13 @@ export default function FormAndArguments() {
         setIsModalVisible(false);
         reset();
     };
+
+    useEffect(() => {
+        console.log(`Form & Argument Screen ${stateForm.isSuccess}`);
+        if (stateForm.isSuccess) {
+            navigation.navigate('FormResult');
+        }
+    });
 
     return(
         <SafeAreaView style={styles.container}>
