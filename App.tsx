@@ -8,7 +8,7 @@ import Home from './src/screens/home';
 import Counter from './src/screens/counter';
 import FormAndArguments from './src/screens/form-and-arguments';
 import FormResult from './src/screens/form-result';
-import ListPlace from './src/screens/ListPlace';
+import ListPlace from './src/screens/list-place';
 import { RootStackParamList } from './src/screens/root-stack-params';
 import { THEME_COLOR } from './src/data/colors';
 import store from './src/redux/store'
