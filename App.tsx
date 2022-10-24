@@ -37,7 +37,7 @@ export default function App() {
           <Stack.Screen name="Counter" component={Counter} options={{...baseOptions, title: "Counter"}} />
           <Stack.Screen name="FormArguments" component={FormAndArguments} options={{...baseOptions, title: "Form & Arguments"}}/>
           <Stack.Screen name="FormResult" component={FormResult} options={{...baseOptions, title: "Form Result"}} />
-          <Stack.Screen name="ListPlace" component={ListPlace} options={{...baseOptions, title: "Networking"}} />
+          <Stack.Screen name="ListPlace" component={ListPlace} options={{...baseOptions, title: "List Place"}} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>
