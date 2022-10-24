@@ -1,4 +1,4 @@
-import { SUBMIT_LOGIN_RESET, SUBMIT_LOGIN_START, SUBMIT_LOGIN_SUCCESS } from '../actions/action-types';
+import { SUBMIT_LOGIN_RESET, SUBMIT_LOGIN_START, SUBMIT_LOGIN_SUCCESS } from '../types';
 
 interface FormArgument {
     type: String,
