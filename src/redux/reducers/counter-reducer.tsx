@@ -1,4 +1,4 @@
-import { INCREASE_COUNTER, DECREASE_COUNTER } from '../actions/ActionTypes';
+import { INCREASE_COUNTER, DECREASE_COUNTER } from '../types';
 
 interface Counter {
   type: String
@@ -8,7 +8,7 @@ const initialState = {
   counter: 0
 }
 
-const reducer = (state = initialState, action: Counter) => {
+export function counterReducer(state = initialState, action: Counter){
   switch (action.type) {
     case INCREASE_COUNTER:
       return {
@@ -24,5 +24,3 @@ const reducer = (state = initialState, action: Counter) => {
       return state;
   }
 }
-
-export default reducer;
