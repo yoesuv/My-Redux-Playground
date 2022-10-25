@@ -16,18 +16,22 @@ export default function ListPlace() {
       dispatch(listPlaceLoadingStop());
     }, 3000);
   }, []);
-  
-  const content = (<Text>Content</Text>);
 
   return (
     <SafeAreaView style={styles.container}>
-      {state.isLoading ? <Loading /> : content}
+      {state.isLoading ? <Loading /> : <BuildContent />}
     </SafeAreaView>
   );
 
   function Loading(): JSX.Element {
     return <View style={{ flex: 1, alignContent: 'center', justifyContent: 'center'}}>
       <ActivityIndicator size='large' />
+    </View>
+  }
+
+  function BuildContent(): JSX.Element {
+    return <View style={{ flex: 1, alignContent: 'center', justifyContent: 'center'}}>
+      <Text style={styles.label}>Data Count : 10</Text>
     </View>
   }
 
@@ -38,4 +42,9 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
   },
+  label: {
+    fontSize: 33,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  }
 });

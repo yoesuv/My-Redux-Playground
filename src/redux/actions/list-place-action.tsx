@@ -4,11 +4,13 @@ import { ListPlaceActionType, LIST_PLACE_LOADING_START, LIST_PLACE_LOADING_STOP 
 export const listPlaceLoadingStart: ActionCreator<ListPlaceActionType> = () => {
   return {
     type: LIST_PLACE_LOADING_START,
+    places: [],
   };
 }
 
 export const listPlaceLoadingStop: ActionCreator<ListPlaceActionType> = () => {
   return {
     type: LIST_PLACE_LOADING_STOP,
+    places: [],
   };
 }

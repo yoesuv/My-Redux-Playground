@@ -1,13 +1,14 @@
+import { PlaceModel } from '../../models/place-model';
 import { LIST_PLACE_LOADING_START, LIST_PLACE_LOADING_STOP } from '../types';
 
 interface ListPlace {
   type: String,
-  places: [{nama:'', lokasi:'', gambar:''}],
+  places: PlaceModel[],
 }
 
 const initialState = {
   isLoading: false,
-  places: [{nama:'', lokasi:'', gambar:''}],
+  places: [],
 }
 
 export function listPlaceReducer(state = initialState, action: ListPlace) {
