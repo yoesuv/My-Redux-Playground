@@ -1,5 +1,11 @@
 ## Redux Playground ##
-Just a Redux Reminder for me. Build from [Expo Framework](https://expo.dev/)
+Just a Redux Reminder for me. Build from [Expo Framework](https://expo.dev/)  
+Download apk file [here](https://www.dropbox.com/s/otwgbubxgpx48db)
+
+#### Menu ####
+| Menu |
+| :---: |
+| ![](https://i.imgur.com/ziUwTK4.png) |
 
 #### List Package ####
 - [React Hook Form](https://github.com/react-hook-form/react-hook-form)
