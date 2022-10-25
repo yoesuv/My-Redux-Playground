@@ -24,7 +24,8 @@ const baseOptions: NativeStackNavigationOptions = {
   headerTintColor: 'white',
   headerTitleStyle: {
     fontWeight: 'bold',
-  }
+  },
+  statusBarColor: THEME_COLOR,
 };
 
 export default function App() {
